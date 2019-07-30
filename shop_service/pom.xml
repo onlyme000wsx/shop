@@ -11,5 +11,13 @@
 
     <artifactId>shop_service</artifactId>
 
+    <packaging>jar</packaging>
+    <dependencies>
+        <dependency>
+            <groupId>com.czxy</groupId>
+            <artifactId>shop_dao</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
 </project>
