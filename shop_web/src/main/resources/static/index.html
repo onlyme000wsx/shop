@@ -41,7 +41,7 @@
 			 $(function () {
 				 $.ajax({
 					 url:"/shop/findallC",
-					 type:"get",
+					 type:"post",
 					 dataType:"json",
 					 success:function (data) {
 						 $(data).each(function (index,classfy) {
@@ -52,7 +52,7 @@
 				 
 				 $.ajax({
 					 url:"/shop/findallG",
-					 type:"get",
+					 type:"post",
 					 dataType:"json",
 					 success:function (data) {
 						 $(data).each(function (index,goods) {
@@ -96,7 +96,7 @@
 			       $("#pro").html("")
                   $.ajax({
 					  url:"/shop/findbycid/"+cid,
-					  type:"get",
+					  type:"post",
 					  dataType:"json",
 					  success:function (data) {
                           $(data).each(function (index,goods) {

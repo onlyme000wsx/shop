@@ -7,10 +7,7 @@ import com.czxy.service.ClassfyService;
 import com.czxy.service.GoodsService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -33,7 +30,7 @@ public class Mycontroller {
     @Resource
     private GoodsService goodsService;
 
-    @GetMapping("/findallC")
+    @PostMapping("/findallC")
     public ResponseEntity<List<Classfy>>findAllClassfy(){
         try {
             List<Classfy> all = classfyService.findAll();
@@ -45,7 +42,7 @@ public class Mycontroller {
     }
 
 
-    @GetMapping("/findallG")
+    @PostMapping("/findallG")
     public ResponseEntity<List<Goods>>findAllGoods(){
         try {
             List<Goods> all = goodsService.findAllG();
@@ -56,7 +53,7 @@ public class Mycontroller {
         }
     }
 
-    @GetMapping("/findbycid/{cid}")
+    @PostMapping("/findbycid/{cid}")
     public ResponseEntity<List<Goods>>findBycid(@PathVariable String cid){
         List<Goods> findbycid = null;
         try {
