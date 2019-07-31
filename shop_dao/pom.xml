@@ -19,4 +19,12 @@
         </dependency>
     </dependencies>
 
+    <packaging>jar</packaging>
+    <dependencies>
+        <dependency>
+            <groupId>com.czxy</groupId>
+            <artifactId>shop_domain</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 </project>
