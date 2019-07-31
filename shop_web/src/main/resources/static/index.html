@@ -57,7 +57,7 @@
 					 success:function (data) {
 						 $(data).each(function (index,goods) {
 							 $("#pro").append("<!-- product -->\n" +
-                                 "\t\t\t\t\t\t\t\t\t\t<div  style='width: 25%;float: left' class=\"product\">\n" +
+                                 "\t\t\t\t\t\t\t\t\t\t<div  style='width: 25%;float: left;margin:15px' class=\"product\">\n" +
                                  "\t\t\t\t\t\t\t\t\t\t\t<div class=\"product-img\">\n" +
                                  "\t\t\t\t\t\t\t\t\t\t\t\t<img src=\"./img/"+goods.gimg+"\" alt=\"\">\n" +
                                  "\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"product-label\">\n" +
@@ -66,7 +66,7 @@
                                  "\t\t\t\t\t\t\t\t\t\t\t\t</div>\n" +
                                  "\t\t\t\t\t\t\t\t\t\t\t</div>\n" +
                                  "\t\t\t\t\t\t\t\t\t\t\t<div class=\"product-body\">\n" +
-                                 "\t\t\t\t\t\t\t\t\t\t\t\t<p class=\"product-category\">"+goods.classfy.cname+"</p>\n" +
+                                 "\t\t\t\t\t\t\t\t\t\t\t\t<p class=\"product-category\">"+goods.classify.cname+"</p>\n" +
                                  "\t\t\t\t\t\t\t\t\t\t\t\t<h3 class=\"product-name\"><a href=\"#\">"+goods.gname+"</a></h3>\n" +
                                  "\t\t\t\t\t\t\t\t\t\t\t\t<h4 class=\"product-price\">$"+goods.gnewprice+" <del class=\"product-old-price\">$"+goods.goldprice+"</del></h4>\n" +
                                  "\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"product-rating\">\n" +
@@ -101,7 +101,7 @@
 					  success:function (data) {
                           $(data).each(function (index,goods) {
                               $("#pro").append("<!-- product -->\n" +
-                                  "\t\t\t\t\t\t\t\t\t\t<div  style='width: 25%;float: left' class=\"product\">\n" +
+                                  "\t\t\t\t\t\t\t\t\t\t<div  style='width: 25%;float: left;margin: 15px' class=\"product\">\n" +
                                   "\t\t\t\t\t\t\t\t\t\t\t<div class=\"product-img\">\n" +
                                   "\t\t\t\t\t\t\t\t\t\t\t\t<img src=\"./img/"+goods.gimg+"\" alt=\"\">\n" +
                                   "\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"product-label\">\n" +
@@ -110,7 +110,7 @@
                                   "\t\t\t\t\t\t\t\t\t\t\t\t</div>\n" +
                                   "\t\t\t\t\t\t\t\t\t\t\t</div>\n" +
                                   "\t\t\t\t\t\t\t\t\t\t\t<div class=\"product-body\">\n" +
-                                  "\t\t\t\t\t\t\t\t\t\t\t\t<p class=\"product-category\">"+goods.classfy.cname+"</p>\n" +
+                                  "\t\t\t\t\t\t\t\t\t\t\t\t<p class=\"product-category\">"+goods.classify.cname+"</p>\n" +
                                   "\t\t\t\t\t\t\t\t\t\t\t\t<h3 class=\"product-name\"><a href=\"#\">"+goods.gname+"</a></h3>\n" +
                                   "\t\t\t\t\t\t\t\t\t\t\t\t<h4 class=\"product-price\">$"+goods.gnewprice+" <del class=\"product-old-price\">$"+goods.goldprice+"</del></h4>\n" +
                                   "\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"product-rating\">\n" +

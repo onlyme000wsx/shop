@@ -1,7 +1,8 @@
 package com.czxy.service.Empl;
 
 import com.czxy.dao.ClassfyMapper;
-import com.czxy.domain.Classfy;
+
+import com.czxy.domain.Classify;
 import com.czxy.service.ClassfyService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,7 +22,7 @@ public class ClassfyServiceEmpl implements ClassfyService {
     private ClassfyMapper classfyMapper;
 
     @Override
-    public List<Classfy> findAll() {
+    public List<Classify> findAll() {
         return classfyMapper.selectAll();
     }
 }

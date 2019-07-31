@@ -1,6 +1,7 @@
 package com.czxy.dao;
 
-import com.czxy.domain.Classfy;
+
+import com.czxy.domain.Classify;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import tk.mybatis.mapper.common.Mapper;
@@ -11,8 +12,8 @@ import tk.mybatis.mapper.common.Mapper;
  * @Date 2019/7/30
  */
 @org.apache.ibatis.annotations.Mapper
-public interface ClassfyMapper extends Mapper<Classfy> {
+public interface ClassfyMapper extends Mapper<Classify> {
 
     @Select("select * from tbl_classify where cid=#{cid}")
-    public Classfy findbycid(@Param("cid") String cid);
+    public Classify findbycid(@Param("cid") String cid);
 }

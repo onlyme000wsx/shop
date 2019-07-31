@@ -31,12 +31,12 @@ public class Goods {
   private  Integer gsum;
   private  String cid;
   private  String bid;
-  private  Classfy classfy;
+  private  Classify classify;
 
     public Goods() {
     }
 
-    public Goods(String gid, String gname, String gintroduce, String gimg, Double gnewprice, Double goldprice, Date gtime, Integer gsum, String cid, String bid, Classfy classfy) {
+    public Goods(String gid, String gname, String gintroduce, String gimg, Double gnewprice, Double goldprice, Date gtime, Integer gsum, String cid, String bid, Classify classify) {
         this.gid = gid;
         this.gname = gname;
         this.gintroduce = gintroduce;
@@ -47,7 +47,7 @@ public class Goods {
         this.gsum = gsum;
         this.cid = cid;
         this.bid = bid;
-        this.classfy = classfy;
+        this.classify = classify;
     }
 
     public String getGid() {
@@ -130,12 +130,12 @@ public class Goods {
         this.bid = bid;
     }
 
-    public Classfy getClassfy() {
-        return classfy;
+    public Classify getClassify() {
+        return classify;
     }
 
-    public void setClassfy(Classfy classfy) {
-        this.classfy = classfy;
+    public void setClassify(Classify classify) {
+        this.classify = classify;
     }
 
     @Override
@@ -151,7 +151,7 @@ public class Goods {
                 ", gsum=" + gsum +
                 ", cid='" + cid + '\'' +
                 ", bid='" + bid + '\'' +
-                ", classfy=" + classfy +
+                ", classify=" + classify +
                 '}';
     }
 }

@@ -1,6 +1,7 @@
 package com.czxy.Controller;
 
-import com.czxy.domain.Classfy;
+
+import com.czxy.domain.Classify;
 import com.czxy.domain.Goods;
 import com.czxy.service.BrankService;
 import com.czxy.service.ClassfyService;
@@ -31,9 +32,9 @@ public class Mycontroller {
     private GoodsService goodsService;
 
     @PostMapping("/findallC")
-    public ResponseEntity<List<Classfy>>findAllClassfy(){
+    public ResponseEntity<List<Classify>>findAllClassfy(){
         try {
-            List<Classfy> all = classfyService.findAll();
+            List<Classify> all = classfyService.findAll();
             return ResponseEntity.ok(all);
         } catch (Exception e) {
             e.printStackTrace();

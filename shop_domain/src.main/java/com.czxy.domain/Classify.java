@@ -12,16 +12,16 @@ import javax.persistence.Table;
  */
 @Table(name = "tbl_classify")
 // 分类表
-public class Classfy {
+public class Classify {
 
     @Id
     private String cid;//分类id
     private  String cname;//分类名称
 
-    public Classfy() {
+    public Classify() {
     }
 
-    public Classfy(String cid, String cname) {
+    public Classify(String cid, String cname) {
         this.cid = cid;
         this.cname = cname;
     }
@@ -43,8 +43,8 @@ public class Classfy {
     }
 
     @Override
-    public String toString() {
-        return "Classfy{" +
+    public String  toString() {
+        return "Classify{" +
                 "cid='" + cid + '\'' +
                 ", cname='" + cname + '\'' +
                 '}';

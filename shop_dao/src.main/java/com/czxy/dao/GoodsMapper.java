@@ -16,7 +16,7 @@ public interface GoodsMapper extends Mapper<Goods> {
 
     @Select("select * from tbl_goods order by tbl_goods.gtime desc limit 0,4")
     @Results(id = "vb",value = {
-            @Result(property = "classfy",one = @One(select = "com.czxy.dao.ClassfyMapper.findbycid"),column = "cid")
+            @Result(property = "classify",one = @One(select = "com.czxy.dao.ClassfyMapper.findbycid"),column = "cid")
     })
     public List<Goods>findBydate();
 

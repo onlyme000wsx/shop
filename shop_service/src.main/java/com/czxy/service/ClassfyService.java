@@ -1,6 +1,8 @@
 package com.czxy.service;
 
-import com.czxy.domain.Classfy;
+
+
+import com.czxy.domain.Classify;
 
 import java.util.List;
 
@@ -10,5 +12,5 @@ import java.util.List;
  * @Date 2019/7/30
  */
 public interface ClassfyService {
-    public List<Classfy>findAll();
+    public List<Classify>findAll();
 }
