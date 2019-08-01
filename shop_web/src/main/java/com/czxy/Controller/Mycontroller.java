@@ -102,15 +102,17 @@ public class Mycontroller {
 
         try {
             ShoppingCart shoppingCart = (ShoppingCart) session.getAttribute("shoppingCart");
-            Map<String, ShoppingCartItem> map = shoppingCart.getMap();
-            List<ShoppingCartItem>list=new ArrayList<>();
-
-            for (String s : map.keySet()) {
-                ShoppingCartItem shoppingCartItem = map.get(s);
-                list.add(shoppingCartItem);
+            if (shoppingCart!=null){
+                Map<String, ShoppingCartItem> map = shoppingCart.getMap();
+                List<ShoppingCartItem>list=new ArrayList<>();
+                for (String s : map.keySet()) {
+                    ShoppingCartItem shoppingCartItem = map.get(s);
+                    list.add(shoppingCartItem);
+                }
+                return ResponseEntity.ok(list);
             }
 
-            return ResponseEntity.ok(list);
+            return new ResponseEntity<>(HttpStatus.ACCEPTED);
         } catch (Exception e) {
             e.printStackTrace();
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);

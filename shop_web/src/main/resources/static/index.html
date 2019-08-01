@@ -159,39 +159,48 @@
 					 url:"/shop/MyShoppingCart",
 					 type:"post",
 					 dataType:"json",
-					 success:function (shoppingCart) {
-                            $("#showshoppingCart").html("")
-					       $(shoppingCart).each(function (index,ele) {
-                               $("#showshoppingCart").append(
-								  "<div class=\"product-img\">\n" +
-                                   "\t\t\t\t\t\t\t\t\t\t\t\t\t<img src=\"./img/"+ele.goods.gimg+"\" alt=\"\">\n" +
-                                   "\t\t\t\t\t\t\t\t\t\t\t\t</div>\n" +
-                                   "\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"product-body\">\n" +
-                                   "\t\t\t\t\t\t\t\t\t\t\t\t\t<h3 class=\"product-name\"><a href=\"#\">"+ele.goods.gname+"</a></h3>\n" +
-                                   "\t\t\t\t\t\t\t\t\t\t\t\t\t<h4 class=\"product-price\"><span class=\"qty\">"+ele.number+"x</span>$"+ele.goods.gnewprice+"</h4>\n" +
-                                   "\t\t\t\t\t\t\t\t\t\t\t\t</div>\n" +
-                                   "\t\t\t\t\t\t\t\t\t\t\t\t<button class=\"delete\"><i class=\"fa fa-close\"></i></button>"
-                               )
+					 statusCode:{
+					     200:function (shoppingCart) {
+                             $("#showshoppingCart").html("")
 
-							   total+=ele.subtotal
-							   size++;
-                           })
+                                 $(shoppingCart).each(function (index,ele) {
+                                     $("#showshoppingCart").append("<div class=\"product-widget\">\n" +
+                                         "\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"product-img\">\n" +
+                                         "\t\t\t\t\t\t\t\t\t\t\t\t\t<img src=\"./img/"+ele.goods.gimg+"\" alt=\"\">\n" +
+                                         "\t\t\t\t\t\t\t\t\t\t\t\t</div>\n" +
+                                         "\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"product-body\">\n" +
+                                         "\t\t\t\t\t\t\t\t\t\t\t\t\t<h3 class=\"product-name\"><a href=\"#\">"+ele.goods.gname+"</a></h3>\n" +
+                                         "\t\t\t\t\t\t\t\t\t\t\t\t\t<h4 class=\"product-price\"><span class=\"qty\">"+ele.number+"x</span>$"+ele.goods.gnewprice+"</h4>\n" +
+                                         "\t\t\t\t\t\t\t\t\t\t\t\t</div>\n" +
+                                         "\t\t\t\t\t\t\t\t\t\t\t\t<button class=\"delete\"><i class=\"fa fa-close\"></i></button>\n" +
+                                         "\t\t\t\t\t\t\t\t\t\t\t</div>")
+
+                                     total+=ele.subtotal
+                                     size++;
+                                 })
+
+                                 $("#showshoppingCart").append("" +
+                                     "<div class=\"cart-summary\">\n" +
+                                     "\t\t\t\t\t\t\t\t\t\t\t<small>"+size+"  Item(s) selected</small>\n" +
+                                     "\t\t\t\t\t\t\t\t\t\t\t<h5 id=\"total\">SUBTOTAL: $2940.00</h5>\n" +
+                                     "\t\t\t\t\t\t\t\t\t\t</div>\n" +
+                                     "\t\t\t\t\t\t\t\t\t\t<div class=\"cart-btns\">\n" +
+                                     "\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\">View Cart</a>\n" +
+                                     "\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Checkout  <i class=\"fa fa-arrow-circle-right\"></i></a>\n" +
+                                     "\t\t\t\t\t\t\t\t\t\t</div>")
+
+                                 $("#total").html("总价:$"+total)
+                                 $("#qty").html(size)
+                             },
+                         202:function () {
+                             $("#showshoppingCart").html("购物车是空的")
+                         },
+                         500:function () {
+                             alert("网络错误")
+                         }
+                         }
 
 
-
-
-						 $("#showshoppingCart").append("<div class=\"cart-summary\">\n" +
-                             "\t\t\t\t\t\t\t\t\t\t\t<small>"+size+"  Item(s) selected</small>\n" +
-                             "\t\t\t\t\t\t\t\t\t\t\t<h5 id=\"total\">SUBTOTAL: $2940.00</h5>\n" +
-                             "\t\t\t\t\t\t\t\t\t\t</div>\n" +
-                             "\t\t\t\t\t\t\t\t\t\t<div class=\"cart-btns\">\n" +
-                             "\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\">View Cart</a>\n" +
-                             "\t\t\t\t\t\t\t\t\t\t\t<a href=\"#\">Checkout  <i class=\"fa fa-arrow-circle-right\"></i></a>\n" +
-                             "\t\t\t\t\t\t\t\t\t\t</div>")
-						 $("#total").html("总价:$"+total)
-
-
-                     }
 				 })
              }
 		 </script>
@@ -255,7 +264,7 @@
 									<a href="#">
 										<i class="fa fa-heart-o"></i>
 										<span>Your Wishlist</span>
-										<div class="qty">2</div>
+										<div class="qty" ></div>
 									</a>
 								</div>
 								<!-- /Wishlist -->
@@ -265,12 +274,15 @@
 									<a onclick=showShoppingcart() class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
 										<i class="fa fa-shopping-cart"></i>
 										<span>Your Cart</span>
-										<div class="qty">3</div>
+										<div class="qty" id="qty"></div>
 									</a>
 									<div class="cart-dropdown" >
-										<div class="product-widget" id="showshoppingCart">
+										<div class="cart-list" id="showshoppingCart">
+
+
 
 										</div>
+									</div>
 									</div>
 
 									</div>
