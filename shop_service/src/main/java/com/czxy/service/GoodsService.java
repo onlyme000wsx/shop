@@ -14,4 +14,7 @@ public interface GoodsService {
     public List<Goods>findAllG();
 
     public List<Goods>findbycid(String cid);
+
+
+    public Goods shoppingBygid(String gid);
 }

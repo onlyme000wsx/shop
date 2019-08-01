@@ -11,6 +11,6 @@ import java.util.List;
  * @Version v 1.0
  * @Date 2019/7/30
  */
-public interface ClassfyService {
+public interface ClassifyService {
     public List<Classify>findAll();
 }

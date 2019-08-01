@@ -31,4 +31,9 @@ public class GoodsServiceEmpl implements GoodsService {
     public List<Goods> findbycid(String cid) {
         return GoodsMapper.findBycid(cid);
     }
+
+    @Override
+    public Goods shoppingBygid(String gid) {
+        return GoodsMapper.shoppingCartBygid(gid);
+    }
 }

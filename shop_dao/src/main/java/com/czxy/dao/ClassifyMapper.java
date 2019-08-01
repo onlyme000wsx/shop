@@ -12,7 +12,7 @@ import tk.mybatis.mapper.common.Mapper;
  * @Date 2019/7/30
  */
 @org.apache.ibatis.annotations.Mapper
-public interface ClassfyMapper extends Mapper<Classify> {
+public interface ClassifyMapper extends Mapper<Classify> {
 
     @Select("select * from tbl_classify where cid=#{cid}")
     public Classify findbycid(@Param("cid") String cid);
